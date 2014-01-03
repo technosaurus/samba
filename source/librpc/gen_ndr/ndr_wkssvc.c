@@ -1350,10 +1350,8 @@ NTSTATUS ndr_push_USER_INFO_0_CONTAINER(struct ndr_push *ndr, int ndr_flags, con
 	if (ndr_flags & NDR_BUFFERS) {
 		if (r->user0) {
 			NDR_CHECK(ndr_push_uint32(ndr, NDR_SCALARS, r->entries_read));
-			for (cntr_user0_1 = 0; cntr_user0_1 < r->entries_read; cntr_user0_1++) {
+			for (cntr_user0_1 = 0; cntr_user0_1 < ndr_get_array_size(ndr, &r->user0); cntr_user0_1++) {
 				NDR_CHECK(ndr_push_USER_INFO_0(ndr, NDR_SCALARS, &r->user0[cntr_user0_1]));
-			}
-			for (cntr_user0_1 = 0; cntr_user0_1 < r->entries_read; cntr_user0_1++) {
 				NDR_CHECK(ndr_push_USER_INFO_0(ndr, NDR_BUFFERS, &r->user0[cntr_user0_1]));
 			}
 		}
@@ -1596,10 +1594,8 @@ NTSTATUS ndr_push_USER_INFO_1_CONTAINER(struct ndr_push *ndr, int ndr_flags, con
 	if (ndr_flags & NDR_BUFFERS) {
 		if (r->user1) {
 			NDR_CHECK(ndr_push_uint32(ndr, NDR_SCALARS, r->entries_read));
-			for (cntr_user1_1 = 0; cntr_user1_1 < r->entries_read; cntr_user1_1++) {
+			for (cntr_user1_1 = 0; cntr_user1_1 < ndr_get_array_size(ndr, &r->user1); cntr_user1_1++) {
 				NDR_CHECK(ndr_push_USER_INFO_1(ndr, NDR_SCALARS, &r->user1[cntr_user1_1]));
-			}
-			for (cntr_user1_1 = 0; cntr_user1_1 < r->entries_read; cntr_user1_1++) {
 				NDR_CHECK(ndr_push_USER_INFO_1(ndr, NDR_BUFFERS, &r->user1[cntr_user1_1]));
 			}
 		}
@@ -1918,10 +1914,8 @@ NTSTATUS ndr_push_wkssvc_NetWkstaTransportCtr0(struct ndr_push *ndr, int ndr_fla
 	if (ndr_flags & NDR_BUFFERS) {
 		if (r->array) {
 			NDR_CHECK(ndr_push_uint32(ndr, NDR_SCALARS, r->count));
-			for (cntr_array_1 = 0; cntr_array_1 < r->count; cntr_array_1++) {
+			for (cntr_array_1 = 0; cntr_array_1 < ndr_get_array_size(ndr, &r->array); cntr_array_1++) {
 				NDR_CHECK(ndr_push_wkssvc_NetWkstaTransportInfo0(ndr, NDR_SCALARS, &r->array[cntr_array_1]));
-			}
-			for (cntr_array_1 = 0; cntr_array_1 < r->count; cntr_array_1++) {
 				NDR_CHECK(ndr_push_wkssvc_NetWkstaTransportInfo0(ndr, NDR_BUFFERS, &r->array[cntr_array_1]));
 			}
 		}
